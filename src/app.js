@@ -9,6 +9,8 @@ const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
+
+const port = process.env.PORT || 3000;
  
 app.set('view engine', 'hbs');
 app.set('views', viewsPath);
@@ -93,6 +95,6 @@ app.get('*', (req, res) => {
 	})
 });
 
-app.listen(3000, () => {
-	console.log('The server is running on localhost: 3000');
+app.listen(port, () => {
+	console.log(`The server is running on localhost: ${port}`);
 });
